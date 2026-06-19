@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
+
+    /* Brand: Forest Green — #1a7a4a ≈ hsl(145 65% 29%) */
+    --background:          150 20% 98%;
+    --foreground:          150 35% 8%;
+
+    --card:                0 0% 100%;
+    --card-foreground:     150 35% 8%;
+
+    --popover:             0 0% 100%;
+    --popover-foreground:  150 35% 8%;
+
+    --primary:             145 65% 29%;
+    --primary-foreground:  0 0% 100%;
+
+    --secondary:           145 45% 44%;
+    --secondary-foreground:0 0% 100%;
+
+    --muted:               150 15% 95%;
+    --muted-foreground:    150 10% 45%;
+
+    --accent:              145 45% 93%;
+    --accent-foreground:   145 65% 24%;
+
+    --destructive:         0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border:              150 15% 90%;
+    --input:               150 15% 90%;
+    --ring:                145 65% 29%;
+
+    --radius:              0.625rem;
+
+    /* Charts */
+    --chart-1:             145 65% 29%;
+    --chart-2:             145 45% 44%;
+    --chart-3:             197 37% 24%;
+    --chart-4:             43 74% 66%;
+    --chart-5:             27 87% 67%;
+
+    /* Sidebar — dark forest green */
+    --sidebar-background:  148 58% 10%;
+    --sidebar-foreground:  0 0% 92%;
+    --sidebar-primary:     145 55% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent:      148 48% 16%;
+    --sidebar-accent-foreground:  0 0% 95%;
+    --sidebar-border:      148 45% 14%;
+    --sidebar-ring:        145 65% 45%;
+  }
+
+  .dark {
+    --background:          148 30% 7%;
+    --foreground:          0 0% 95%;
+    --card:                148 30% 10%;
+    --card-foreground:     0 0% 95%;
+    --popover:             148 30% 10%;
+    --popover-foreground:  0 0% 95%;
+    --primary:             145 55% 42%;
+    --primary-foreground:  0 0% 100%;
+    --secondary:           145 40% 35%;
+    --secondary-foreground:0 0% 100%;
+    --muted:               148 20% 16%;
+    --muted-foreground:    150 10% 60%;
+    --accent:              145 40% 18%;
+    --accent-foreground:   145 55% 80%;
+    --destructive:         0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border:              148 20% 18%;
+    --input:               148 20% 18%;
+    --ring:                145 55% 42%;
+    --sidebar-background:  148 60% 6%;
+    --sidebar-foreground:  0 0% 90%;
+    --sidebar-primary:     145 55% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent:      148 50% 12%;
+    --sidebar-accent-foreground:  0 0% 95%;
+    --sidebar-border:      148 45% 10%;
+    --sidebar-ring:        145 55% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
+}
+
+@media print {
+  body * { visibility: hidden; }
+  #facture-print, #facture-print * { visibility: visible; }
+  #facture-print {
+    position: absolute;
+    left: 0; top: 0; width: 100%;
+  }
+}
